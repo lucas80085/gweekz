@@ -1,0 +1,18 @@
+{% block content %}   
+    <div class="block">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend>Log In</legend>
+                <input type="text" name="username" placeholder="username"><br>
+                <input type="text" name="password" placeholder="password"><br>
+            </fieldset>
+            <div class="form-group">
+                <button type="submit">Log In</button>
+            </div>
+        </form>
+        <div>
+            <small>Need An Account?<a href="#">Sign Up</a></small>
+        </div>
+    </div>
+{% endblock content %}  

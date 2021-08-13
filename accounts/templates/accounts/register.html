@@ -1,0 +1,17 @@
+{% block content %}   
+    <div class="block">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend>Join Today</legend>
+                {{ form }}
+            </fieldset>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div>
+            <small>Already have an account?<a href="#">Log In</a></small>
+        </div>
+    </div>
+{% endblock content %}  
