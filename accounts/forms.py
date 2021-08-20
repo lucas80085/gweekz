@@ -3,7 +3,7 @@ from django.contrib.auth import forms
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
-from .models import User, Creator, Consumer
+from .models import User, Creator, Consumer, Product
 
 
 class UserChangeForm(UserChangeForm):
@@ -55,11 +55,19 @@ class CreatorRegister(d_forms.ModelForm):
         fields = ['first_name', 'last_name', 'username', 'email', 'password', 'avatar',
         'description']
 
+
 class UserUpdateForm(d_forms.ModelForm):
     model = Creator, Consumer
     fields = ['username', 'email', 'avatar']
+
 
 class ProfileUpdateForm(d_forms.ModelForm):
     class Meta:
         model = Creator
         fields = ['description']
+
+
+class ProductForm(d_forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'description', 'image', 'price', 'games', 'tags']
