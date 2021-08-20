@@ -2,8 +2,6 @@ from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from django.contrib.postgres.fields import ArrayField
-#from ..feed.models import Games as game_choices
 
 
 class User(AbstractUser):
@@ -59,21 +57,8 @@ class Consumer(User):
 class Creator(User):
     type = User.Types.CREATOR
 
-    class consoles(models.TextChoices):
-        PC = "PC"
-        PLAYSTATION = "PLAYSTATION", "Playstation"
-        XBOX = "XBOX", "Xbox"
-        OTHERS = "OTHERS", "Others"
-
     description = models.TextField(max_length=500, default="")
-    #game = models.CharField(choices=game_choices.choices, blank=False, default="")
-    console = ArrayField(
-        models.CharField(_("Console"), max_length=50, choices=consoles.choices, default="PC")
-    )
-    rank = models.CharField(max_length=255, default="")
-    hours_played = models.IntegerField(_("Hours Played"), default=0)
-    pictures = models.ImageField(upload_to='id/description-images/', null=True, blank=True)
-
+    
     objects = CreatorManager()
 
     class Meta:
