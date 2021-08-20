@@ -32,6 +32,13 @@ urlpatterns = [
     #path('profile/', account_views.user_update_view, name='profile'),
 #    path('game/', include('feed.urls')),
 
+
+    #Noah
+
+    path('',account_views.home, name = "home"),
+    path('games/',account_views.games, name = 'games'),
+    path('upload/', account_views.upload, name = 'upload')
+
 ]
 
 
