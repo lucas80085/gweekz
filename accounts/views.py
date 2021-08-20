@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import RegisterForm, CreatorRegister
+from .forms import RegisterForm, CreatorRegister, ProductForm
+from .models import Product
 from django.contrib.auth import authenticate, login
 
 
@@ -130,3 +131,50 @@ class ProfileView(DetailView):
         context['post_list'] = Post.objects.filter(user__username__iexact=self.kwargs.get('username'))
         return context  
         '''
+
+
+
+
+#Noah
+
+def checkout(request):
+    context = {}
+    return render(request, "accounts/checkout.html", context)
+
+
+def games(request):
+    products = Product.objects.all()
+    context = {"products": products}
+    return render(request, "accounts/games.html", context)
+
+
+def home(request):
+    context = {}
+    return render(request, "accounts/home.html", context)
+
+
+def login(request):
+    context = {}
+    return render(request, "accounts/login.html", context)
+
+
+def register(request):
+    context = {}
+    return render(request, "accounts/register.html", context)
+
+def profile(request):
+    context = {}
+    return render(request, "accounts/profile.html", context)
+
+
+
+def upload(request):
+    form = ProductForm()
+    if request.method == "POST":
+        print(request.POST)
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {"form": form}
+    return render(request, "accounts/upload.html", context)
