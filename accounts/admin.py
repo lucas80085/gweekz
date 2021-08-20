@@ -9,7 +9,7 @@ admin.site.register(Consumer, ConsumerAdmin)
 
 class CreatorAdmin(admin.ModelAdmin):
     fields = ['first_name', 'last_name', 'username', 'email', 'password', 'avatar',
-     'description', 'game', 'console', 'rank', 'hours_played', 'pictures']
+     'description']
 
 admin.site.register(Creator, CreatorAdmin)
 
