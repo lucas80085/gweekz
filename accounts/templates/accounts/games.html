@@ -1,0 +1,37 @@
+{% extends "accounts/Main.html"%}
+{% load static %}
+{%block content%}
+
+{% for product in products%}
+
+<h2>{{product.name}}</h2>
+<h2>{{product.description}}</h2>
+<h2>{{product.price}}</h2>
+
+
+<h2><tbody>
+{% for game in product.games.all %}
+<tr>
+<td>{{game.different_games}}</td>
+</tr>
+
+
+{%endfor%}
+</tbody>
+</h2>
+
+
+<h2><tbody>
+{% for tag in product.tags.all %}
+<tr>
+<td>{{tag.caption}}</td>
+</tr>
+
+</h2>
+
+</tbody>
+
+
+{% endfor %}
+{% endfor %}
+{%endblock content%}

@@ -1,0 +1,13 @@
+  
+{% extends "accounts/Main.html"%}
+{% load static %}
+{%block content %}
+<h3>Course</h3>
+<hr>
+<form action = "" method ="Post">
+      {% csrf_token %}
+      {{form}}
+     <input type = "submit">
+
+</form>
+{%endblock content%}
