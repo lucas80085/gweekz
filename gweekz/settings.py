@@ -88,16 +88,16 @@ TEMPLATES = [
 WSGI_APPLICATION = 'neu.wsgi.application'
 
 
-# Database
+# Database77
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neu',
-        'USER': 'postgres',
-        'PASSWORD': 'Hallo123',
-        'HOST': 'localhost',
+        'NAME': 'llrboqar',
+        'USER': 'llrboqar',
+        'PASSWORD': 'ZLoitiQ-wx1izXdQOnxEiCM0ZYHnKUBa',
+        'HOST': 'surus.db.elephantsql.com',
         'PORT': '5432',
     }
 }
