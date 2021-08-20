@@ -53,7 +53,7 @@ class CreatorRegister(d_forms.ModelForm):
     class Meta:
         model = Creator
         fields = ['first_name', 'last_name', 'username', 'email', 'password', 'avatar',
-        'description', 'console', 'rank', 'hours_played', 'pictures']
+        'description']
 
 class UserUpdateForm(d_forms.ModelForm):
     model = Creator, Consumer
@@ -62,4 +62,4 @@ class UserUpdateForm(d_forms.ModelForm):
 class ProfileUpdateForm(d_forms.ModelForm):
     class Meta:
         model = Creator
-        fields = ['description', 'console', 'rank', 'hours_played', 'pictures']
+        fields = ['description']
